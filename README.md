@@ -88,6 +88,12 @@ git clone https://github.com/itsmohit097/medi-hub.git
    
 ## 🙌 Contributing
 
+[![GitHub repo Good Issues for newbies](https://img.shields.io/github/issues/itsmohit097/medi-hub/good%20first%20issue?style=flat&logo=github&logoColor=green&label=Good%20First%20issues)](https://github.com/itsmohit097/medi-hub/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) [![GitHub Help Wanted issues](https://img.shields.io/github/issues/itsmohit097/medi-hub/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20issues)](https://github.com/itsmohit097/medi-hub/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) [![GitHub Help Wanted PRs](https://img.shields.io/github/issues-pr/itsmohit097/medi-hub/help%20wanted?style=flat&logo=github&logoColor=b545d1&label=%22Help%20Wanted%22%20PRs)](https://github.com/itsmohit097/medi-hub/pulls?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) [![GitHub repo Issues](https://img.shields.io/github/issues/itsmohit097/medi-hub?style=flat&logo=github&logoColor=red&label=Issues)](https://github.com/itsmohit097/medi-hub/issues?q=is%3Aopen)
+
+👋 **Welcome, new contributors!**
+
+Whether you're a seasoned developer or just getting started, your contributions are valuable to us. Don't hesitate to jump in, explore the project, and make an impact. To start contributing, please check out our [Contribution Guidelines](CONTRIBUTING.md). 
+
 > **Warning**: Please do not spam the repository with unnecessary PRs. Make sure to follow the project's [Code of Conduct](https://github.com/itsmohit097/medi-hub/blob/main/CODE_OF_CONDUCT.md).
 
 - Go through the [CONTRIBUTING.md](https://github.com/itsmohit097/medi-hub/blob/main/contributing.md) file, where all the guidelines have been mentioned that will guide you to make your contribution.
