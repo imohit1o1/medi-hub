@@ -69,7 +69,7 @@ function Hero() {
             <p className="font-semibold">20+ Medical Achievements</p>
           </div>
           {/* experienced doctors card */}
-          <div className="hidden absolute top-[40%] right-[-24%] bg-dark_theme/10 backdrop-filter backdrop-blur-md shadow-md border border-dark_theme/50 rounded-md px-4 py-4 lg:flex items-center gap-3 text-dark_theme">
+          <div className="hidden absolute top-[40%] right-0 bg-dark_theme/10 backdrop-filter backdrop-blur-md shadow-md border border-dark_theme/50 rounded-md px-4 py-4 lg:flex items-center gap-3 text-dark_theme">
             <img src={tick} alt="tick" />
             <p className="font-semibold">50+ Experienced Doctors</p>
           </div>

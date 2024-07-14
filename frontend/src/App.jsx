@@ -28,6 +28,7 @@ import {
 
 function App() {
   return (
+    
     <BrowserRouter>
       <AppContext>
         <Navbar />
@@ -68,6 +69,7 @@ function App() {
         <ToastContainer position="top-right" />
       </AppContext>
     </BrowserRouter>
+    
   );
 }
 
