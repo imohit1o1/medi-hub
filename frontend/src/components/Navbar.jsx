@@ -169,7 +169,7 @@ function Navbar() {
           >
             <IoCartOutline className="text-dark_theme size-8 hidden md:block mr-1" />
             <div className="absolute bottom-4 left-4 border border-main_theme rounded-full cursor-pointer z-50 bg-main_theme/90 text-light_theme">
-              <span className="px-2 py-2 text-xs font-medium">7</span>
+              <span className="px-2 py-2 text-xs font-medium">0</span>
             </div>
           </div>
 
@@ -249,7 +249,7 @@ function Navbar() {
                 >
                   <IoCartOutline className="text-dark_theme size-8 mr-1" />
                   <div className="absolute bottom-4 left-4 border border-main_theme rounded-full cursor-pointer z-50 bg-main_theme/90 text-light_theme">
-                    <span className="px-2 py-2 text-xs font-medium">7</span>
+                    <span className="px-2 py-2 text-xs font-medium">0</span>
                   </div>
                 </div>
               </div>

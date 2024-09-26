@@ -58,25 +58,32 @@ function LoginPage() {
 
   return (
     <div
-      className="flex h-screen"
+      className="flex flex-col md:flex-row h-screen"
       style={{ backgroundColor: "rgb(179, 218, 217)" }}
     >
       <Helmet>
         <script src="https://www.google.com/recaptcha/api.js"></script>
       </Helmet>
-      <div className="w-1/2 flex justify-center items-center">
-        <Lottie options={defaultOptions} height={400} width={400} />
+      {/* Lottie Animation Section */}
+      <div className="md:w-1/2 w-full flex justify-center items-center p-4">
+        <Lottie options={defaultOptions} height={300} width={300} />
       </div>
-      <div className="w-1/2 flex flex-col justify-center items-center bg-white  shadow-lg p-8">
-        <div className="w-full max-w-md">
-          <h1 className="text-3xl font-bold text-center mb-6">Welcome back</h1>
-          <h2 className="text-2xl text-center mb-6">Login your account</h2>
+      
+      {/* Login Form Section */}
+      <div className="md:w-1/2 w-full flex flex-col justify-center items-center bg-white shadow-lg p-8 md:p-12">
+        <div className="w-full max-w-sm md:max-w-md">
+          <h1 className="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6">
+            Welcome back
+          </h1>
+          <h2 className="text-xl md:text-2xl text-center mb-4 md:mb-6">
+            Login to your account
+          </h2>
           <form
             className="flex flex-col"
             id="login-form"
             onSubmit={handleLogin}
           >
-            <label htmlFor="email" className="mb-2">
+            <label htmlFor="email" className="mb-2 text-sm md:text-base">
               Email:
             </label>
             <input
@@ -87,9 +94,9 @@ function LoginPage() {
               onChange={handleInputChange}
               id="email"
               required
-              className="border border-gray-300 rounded-md mb-4 p-2"
+              className="border border-gray-300 rounded-md mb-4 p-2 text-sm md:text-base"
             />
-            <label htmlFor="password" className="mb-2">
+            <label htmlFor="password" className="mb-2 text-sm md:text-base">
               Password:
             </label>
             <input
@@ -100,17 +107,17 @@ function LoginPage() {
               onChange={handleInputChange}
               id="password"
               required
-              className="border border-gray-300 rounded-md mb-4 p-2"
+              className="border border-gray-300 rounded-md mb-4 p-2 text-sm md:text-base"
             />
             <button
-              className="g-recaptcha bg-main_theme text-white font-bold py-2 px-4 rounded-md mb-4"
+              className="g-recaptcha bg-main_theme text-white font-bold py-2 px-4 rounded-md mb-4 text-sm md:text-base"
               data-sitekey="your-site-key"
               data-action="login"
             >
               Login
             </button>
           </form>
-          <div className="flex justify-between text-sm md:text-lg">
+          <div className="flex justify-between text-xs md:text-sm">
             <Link
               to="/signup"
               className="text-purple-600 hover:underline"
