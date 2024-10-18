@@ -79,7 +79,7 @@ import SingleMedicine from "../pages/SingleMedicine.jsx";
 import axios from "../axios/axios.jsx";
 
 
-//! Cusotm hooks
+//! Custom hooks
 import useLoading from "../../hooks/useLoading.js";
 
 export {
