@@ -5,12 +5,52 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      cursor: none;
+    }
+
+    .custom-cursor {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #3498db; /* Fit this color to your website's theme */
+      position: absolute;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      animation: cursor-animation 1s infinite ease-in-out;
+    }
+
+    @keyframes cursor-animation {
+      0% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2) translate(-50%, -50%);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1) translate(-50%, -50%);
+        opacity: 1;
+      }
+    }
+  </style>
   <title>MediHub</title>
 </head>
 
 <body>
   <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <div class="custom-cursor" id="custom-cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('custom-cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  </script>
 </body>
 
 </html>
