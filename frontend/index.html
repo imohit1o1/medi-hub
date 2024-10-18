@@ -3,13 +3,68 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Custom Cursor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      overflow: hidden; /* Prevent default cursor */
+      position: relative;
+    }
+
+    .cursor {
+      position: absolute;
+      width: 30px; /* Cursor size */
+      height: 30px; /* Cursor size */
+      border-radius: 50%; /* Circular shape */
+      background-color: #3498db; /* Cursor color */
+      pointer-events: none; /* Prevent interference with other elements */
+      transform: translate(-50%, -50%); /* Center the cursor */
+      transition: transform 0.1s ease; /* Smooth movement */
+    }
+
+    .navbar {
+      background-color: #3498db;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-container {
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>MediHub</div>
+  </div>
+
+  <!-- Order Page -->
+  <div class="order-container">
+    <h1>Welcome to MediHub</h1>
+    <p>Your trusted healthcare provider.</p>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <script>
+    const cursor = document.getElementById('cursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.pageX + 'px';
+      cursor.style.top = e.pageY + 'px';
+    });
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
