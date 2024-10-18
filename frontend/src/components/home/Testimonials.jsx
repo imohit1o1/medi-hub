@@ -161,63 +161,68 @@ function Testimonials() {
 
         {/* Testiomonials message*/}
         {showForm && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-            <div className="bg-white p-6 border border-gray-300 rounded-lg shadow-md w-full max-w-md mx-auto">
-              <form
-                onSubmit={handleFeedback} // send feedback
-                className="flex flex-col items-center space-y-4"
-              >
-                <input
-                  type="text"
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Your Full Name"
-                  className="p-2 border border-gray-300 rounded w-full"
-                />
-                <input
-                  type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your Email Address"
-                  className="p-2 border border-gray-300 rounded w-full"
-                />
-                <input
-                  type="text"
-                  value={country}
-                  onChange={(e) => setCountry(e.target.value)}
-                  placeholder="Country"
-                  className="p-2 border border-gray-300 rounded w-full"
-                />
-                <input
-                  type="text"
-                  value={state}
-                  onChange={(e) => setState(e.target.value)}
-                  placeholder="State"
-                  className="p-2 border border-gray-300 rounded w-full"
-                />
-                <textarea
-                  value={review}
-                  onChange={(e) => setReview(e.target.value)}
-                  placeholder="Your Review"
-                  className="p-2 border border-gray-300 rounded w-full"
-                ></textarea>
-                <input
-                  type="file"
-                  value={image}
-                  onChange={(e) => setImage(e.target.value)}
-                  placeholder="Profile Picture URL"
-                  className="p-2 border border-gray-300 rounded w-full"
-                />
-                <button
-                  type="submit"
-                  className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
-                >
-                  Submit
-                </button>
-              </form>
-            </div>
-          </div>
-        )}
+  <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div className="bg-white p-6 border border-gray-300 rounded-lg shadow-md w-full max-w-md mx-auto">
+      {/* Close button */}
+      <button
+        onClick={() => setShowForm(false)}
+        className="absolute top-3 right-3 text-2xl font-bold text-gray-500 hover:text-gray-800"
+      >
+        &#10005;
+      </button>
+
+      <form onSubmit={handleFeedback} className="flex flex-col items-center space-y-4">
+        <input
+          type="text"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+          placeholder="Your Full Name"
+          className="p-2 border border-gray-300 rounded w-full"
+        />
+        <input
+          type="text"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Your Email Address"
+          className="p-2 border border-gray-300 rounded w-full"
+        />
+        <input
+          type="text"
+          value={country}
+          onChange={(e) => setCountry(e.target.value)}
+          placeholder="Country"
+          className="p-2 border border-gray-300 rounded w-full"
+        />
+        <input
+          type="text"
+          value={state}
+          onChange={(e) => setState(e.target.value)}
+          placeholder="State"
+          className="p-2 border border-gray-300 rounded w-full"
+        />
+        <textarea
+          value={review}
+          onChange={(e) => setReview(e.target.value)}
+          placeholder="Your Review"
+          className="p-2 border border-gray-300 rounded w-full"
+        ></textarea>
+        <input
+          type="file"
+          value={image}
+          onChange={(e) => setImage(e.target.value)}
+          className="p-2 border border-gray-300 rounded w-full"
+        />
+        <button
+          type="submit"
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+)}
+
       </section>
     </main>
   );
