@@ -3,13 +3,69 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - With Google Translate</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .footer {
+      background-color: #f8f8f8;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .footer a {
+      color: #3498db;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .google-translate {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <div id="root">
+    <!-- Main website content -->
+    <h1>Welcome to MediHub</h1>
+    <p>Providing trusted healthcare solutions for you and your family.</p>
+  </div>
+
+  <!-- Footer with Google Translate widget -->
+  <div class="footer">
+    <p>&copy; 2024 MediHub. All rights reserved.</p>
+
+    <!-- Google Translate Element -->
+    <div class="google-translate">
+      <div id="google_translate_element"></div>
+    </div>
+  </div>
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,es,fr,de,hi,zh-CN',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
