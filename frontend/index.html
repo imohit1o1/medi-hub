@@ -7,23 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
   <style>
-    /* Light Theme */
     :root {
       --bg-color: #ffffff;
       --text-color: #000000;
       --button-bg: #f0f0f0;
       --button-text: #000000;
     }
-
-    /* Dark Theme */
     [data-theme="dark"] {
       --bg-color: #1c1c1c;
       --text-color: #ffffff;
       --button-bg: #444444;
       --button-text: #ffffff;
     }
-
-    /* General Styles */
     body {
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -61,7 +56,6 @@
   </div>
 
   <script>
-    // Function to toggle between light and dark themes
     const themeToggleButton = document.getElementById('theme-toggle');
     const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -71,7 +65,7 @@
     themeToggleButton.addEventListener('click', function () {
       const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme); // Save theme preference
+      localStorage.setItem('theme', newTheme); 
       themeToggleButton.textContent = newTheme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
     });
   </script>
