@@ -11,31 +11,46 @@ export default {
       keyframes: {
         stickyNavbar: {
           "0%": {
-            transform: "translateY(-40px)"
+            transform: "translateY(-40px)",
           },
           "100%": {
-            transform: "translateY(0)"
-          }
-        }
+            transform: "translateY(0)",
+          },
+        },
+      },
+      animation: {
+        stickyNavbar: "stickyNavbar 0.5s ease-in-out forwards", // Add an animation class for convenience
       },
       colors: {
-        dark_theme: "#113C49",
-        main_theme: "#03565A",
-        light_theme: "#B3DAD9",
-        pastel_blue: "#E3EFFC",
-        pastel_yellow: "#FDF1DB",
-        pastel_pink: "#FCEDF2",
-        cart_orange: "#FF8945",
+        primary: "#03565A",
+        secondary: "#113C49",
+        accent: "#FF8945",
+        light: "#B3DAD9",
         text: "#ffffff",
         text_grey: "#464646",
-        medicine_banner: "#162C2A",
-        testimonial_img_bg: "#579D93",
+        background_dark: "#162C2A",
+        testimonial_bg: "#579D93",
+        pastel: {
+          blue: "#E3EFFC",
+          yellow: "#FDF1DB",
+          pink: "#FCEDF2",
+        },
       },
-      // height:{
-      //   heroHeihgt:"calc"
-      // }
+      height: {
+        heroHeight: "calc(100vh - 64px)", // Example of calculating height dynamically
+      },
+      screens: {
+        '2xl': '1440px', // Custom screen size for better scaling on large screens
+      },
+      spacing: {
+        '128': '32rem', // Add a large spacing utility
+        '144': '36rem',
+      },
+      transitionProperty: {
+        width: 'width', // Enable smoother width transitions
+        height: 'height', 
+      },
     },
   },
   plugins: [],
-}
-
+};
