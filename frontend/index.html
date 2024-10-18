@@ -3,13 +3,81 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #3498db; /* Background color for the navbar */
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-icon {
+      position: relative;
+      font-size: 24px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      border-radius: 50%;
+      padding: 2px 6px;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>MediHub</div>
+    <div class="cart-icon">
+      🛒 <span id="cartCount" class="cart-count">0</span>
+    </div>
+    <div>
+      <a href="https://api.whatsapp.com/send?text=Hello!%20I%20need%20assistance." target="_blank">WhatsApp</a>
+    </div>
+  </div>
+
+  <div id="root">
+    <h1>Welcome to MediHub</h1>
+    <p>Your trusted healthcare provider.</p>
+  </div>
+
+  <script>
+    let cartItems = []; // Initialize cart items
+
+    function updateCartCount() {
+      const cartCountElement = document.getElementById('cartCount');
+      const itemCount = cartItems.length;
+
+      if (itemCount > 0) {
+        cartCountElement.textContent = itemCount;
+        cartCountElement.style.display = 'inline-block';
+      } else {
+        cartCountElement.style.display = 'none';
+      }
+    }
+
+    // Simulate empty cart (you can replace this with your cart logic)
+    cartItems = []; // Replace with actual cart logic
+    updateCartCount(); // Update cart count display
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
