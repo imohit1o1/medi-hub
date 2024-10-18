@@ -3,17 +3,8 @@ import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 // react icons
-import {
-  FaDiscord,
-  FaGithub,
-  FaLinkedinIn,
-  FaBars,
-  FaTimes,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedinIn, FaDiscord, FaBars, FaTimes } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { FaRegCalendarCheck, FaRegHeart } from "react-icons/fa";
-import { LuBox } from "react-icons/lu";
-import { IoIosLogOut } from "react-icons/io";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { Context } from "../Context/Context";
 
@@ -29,8 +20,7 @@ function Navbar() {
 
   const navigate = useNavigate();
 
-  // state to manage drop down menu
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
+  // state to manage mobile menu
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Nav items
@@ -49,24 +39,6 @@ function Navbar() {
   // mobile menu toggle
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  // Dropdown menus
-  const dropdownMenus = [
-    { to: "/profile", label: "My Profile", icon: FaRegCircleUser },
-    { to: "/appointments", label: "Appointments", icon: FaRegCalendarCheck },
-    { to: "medicines/wishlist", label: "Wishlist", icon: FaRegHeart },
-    { to: "medicines/order_history", label: "Orders", icon: LuBox },
-    { to: "/logout", label: "Logout", icon: IoIosLogOut },
-  ];
-
-  // mouse events on drop down menu
-  const handleMouseEnter = () => {
-    setDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setDropdownOpen(false);
   };
 
   const handleNavigation = () => {
@@ -107,11 +79,7 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li
-              className="relative hover:scale-105"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+            <li className="relative hover:scale-105">
               <NavLink
                 to="/login"
                 className="text-md font-semibold relative cursor-pointer rounded flex items-center border border-dark_theme text-dark_theme px-4 py-2 gap-2 max-w-[150px]"
@@ -120,28 +88,6 @@ function Navbar() {
                 <FaRegCircleUser className="text-dark_theme" />
                 <span className="truncate">Login</span>
               </NavLink>
-
-              {/* Dropdown Menus */}
-              {isDropdownOpen && (
-                <div
-                  className="absolute left-0 mt-0 w-56 bg-light_theme border border-dark_theme rounded shadow-lg z-50"
-                  onMouseEnter={handleMouseEnter}
-                >
-                  {/* Drop down menu items */}
-                  {dropdownMenus.map((menu, index) => (
-                    <NavLink
-                      key={index}
-                      to={menu.to}
-                      className="flex items-center px-4 py-3 gap-2 text-sm font-medium text-dark_theme hover:bg-main_theme/10"
-                    >
-                      {menu.icon && (
-                        <menu.icon className="text-dark_theme size-4" />
-                      )}
-                      {menu.label}
-                    </NavLink>
-                  ))}
-                </div>
-              )}
             </li>
           </ul>
         </div>
@@ -210,25 +156,6 @@ function Navbar() {
                   <FaRegCircleUser className="text-dark_theme" />
                   <span className="truncate">Login</span>
                 </NavLink>
-
-                {/* Dropdown Menus */}
-                {isDropdownOpen && (
-                  <div className="w-full bg-light_theme border border-dark_theme rounded shadow-lg z-50 mt-2">
-                    {dropdownMenus.map((menu, index) => (
-                      <NavLink
-                        key={index}
-                        to={menu.to}
-                        className="flex items-center px-4 py-3 gap-2 text-sm font-medium text-dark_theme hover:bg-main_theme/10"
-                        onClick={toggleMobileMenu}
-                      >
-                        {menu.icon && (
-                          <menu.icon className="text-dark_theme size-4" />
-                        )}{" "}
-                        {menu.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                )}
               </li>
 
               {/* Social Icons (mobile) */}
