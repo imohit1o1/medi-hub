@@ -3,13 +3,118 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
+  <style>
+    /* Navbar style */
+    .navbar {
+      background-color: #3498db;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Terms & Conditions section */
+    #terms {
+      margin-top: 100px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    #terms h1 {
+      color: #3498db;
+    }
+
+    #terms p {
+      margin-bottom: 1.2rem;
+    }
+
+    #terms a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    #terms a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer style */
+    .footer {
+      background-color: #f8f8f8;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    .footer a {
+      color: #3498db;
+      text-decoration: none;
+      margin: 0 15px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#terms">Terms & Conditions</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Terms & Conditions section -->
+  <div id="terms">
+    <h1>Terms & Conditions</h1>
+    <p>Welcome to MediHub! These terms and conditions outline the rules and regulations for the use of our website.</p>
+    <p>By accessing this website, you agree to comply with and be bound by the following terms and conditions of use.</p>
+
+    <h2>1. Website Usage</h2>
+    <p>Users must use the website in accordance with all applicable laws and regulations. Any unauthorized use of the website is strictly prohibited.</p>
+
+    <h2>2. Privacy Policy</h2>
+    <p>We value your privacy. Please review our Privacy Policy for details about how we collect, use, and protect your personal information.</p>
+
+    <h2>3. Limitation of Liability</h2>
+    <p>MediHub will not be liable for any damages resulting from the use or inability to use the website.</p>
+
+    <h2>4. Modifications to Terms</h2>
+    <p>We reserve the right to modify these terms and conditions at any time. Any changes will be updated on this page.</p>
+
+    <p>For more information, feel free to <a href="mailto:contact@medihub.com">contact us</a>.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="#terms">Terms & Conditions</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
