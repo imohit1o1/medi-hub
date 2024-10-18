@@ -6,10 +6,76 @@
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
+  <style>
+    /* Light Theme */
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #000000;
+      --button-bg: #f0f0f0;
+      --button-text: #000000;
+    }
+
+    /* Dark Theme */
+    [data-theme="dark"] {
+      --bg-color: #1c1c1c;
+      --text-color: #ffffff;
+      --button-bg: #444444;
+      --button-text: #ffffff;
+    }
+
+    /* General Styles */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #root {
+      text-align: center;
+    }
+
+    .theme-toggle {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <h1>Welcome to MediHub</h1>
+    <p>Choose between Light and Dark Theme</p>
+    <button id="theme-toggle" class="theme-toggle">Switch to Dark Theme</button>
+  </div>
+
+  <script>
+    // Function to toggle between light and dark themes
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    themeToggleButton.textContent = currentTheme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+
+    themeToggleButton.addEventListener('click', function () {
+      const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme); // Save theme preference
+      themeToggleButton.textContent = newTheme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme';
+    });
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
