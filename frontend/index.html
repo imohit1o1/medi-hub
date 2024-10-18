@@ -3,13 +3,62 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>Landing Page - MediHub</title>
+  <style>
+    /* Ensure the body and html fit the viewport */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* Example styling for landing page content */
+    .landing-page {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f4;
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #3498db;
+      text-align: center;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #333;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <div class="landing-page">
+    <div class="content">
+      <h1>Welcome to MediHub</h1>
+      <p>Your trusted source for healthcare solutions.</p>
+    </div>
+  </div>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
