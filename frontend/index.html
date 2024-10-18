@@ -1,16 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form</title>
+    <script defer type="module">
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
-</head>
+      import React from 'https://cdn.skypack.dev/react';
+      import ReactDOM from 'https://cdn.skypack.dev/react-dom';
+      import { BrowserRouter as Router, Route, Routes, useNavigate } from 'https://cdn.skypack.dev/react-router-dom';
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+      // Feedback Form Component
+      const FeedbackForm = () => {
+        const navigate = useNavigate();
 
+        const handleCancel = () => {
+          navigate('/'); // Redirect to home
+        };
+
+        const handleSubmit = (event) => {
+          event.preventDefault();
+          alert("Feedback submitted!");
+        };
+
+        return (
+          <form onSubmit={handleSubmit}>
+            <label>
+              Feedback:
+              <textarea name="feedback" required></textarea>
+            </label>
+
+            <div className="button-group">
+              <button type="submit">Submit</button>
+              <button type="button" onClick={handleCancel}>Cancel</button>
+            </div>
+          </form>
+        );
+      };
+
+      // Home Page Component
+      const HomePage = () => {
+        const navigate = useNavigate();
+
+        return (
+          <div>
+            <h1>Welcome to MediHub</h1>
+            <button onClick={() => navigate('/feedback')}>Give Feedback</button>
+          </div>
+        );
+      };
+
+      // Main App Component with Routes
+      const App = () => (
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/feedback" element={<FeedbackForm />} />
+          </Routes>
+        </Router>
+      );
+
+      // Rendering the Application
+      ReactDOM.render(<App />, document.getElementById('root'));
+
+    </script>
+
+    <style>
+      /* Simple styling for buttons */
+      .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      button {
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      button[type="button"] {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
