@@ -1,16 +1,15 @@
-<!doctype html>
-<html lang="en">
+<form action="/submit-issue" method="POST" enctype="multipart/form-data">
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" rows="4" required placeholder="Please provide a brief description of the issue or feature request."></textarea>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
-</head>
+  <label for="actual">Actual Behavior:</label>
+  <input type="text" id="actual" name="actual" required placeholder="Actual behavior of the application" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  <label for="screenshot">Upload Screenshot:</label>
+  <input type="file" id="screenshot" name="screenshot" accept="image/*" />
 
-</html>
+  <label for="expected">Expected Behavior:</label>
+  <textarea id="expected" name="expected" rows="4" required placeholder="Please describe what you expected to happen."></textarea>
+
+  <button type="submit">Submit</button>
+</form>
