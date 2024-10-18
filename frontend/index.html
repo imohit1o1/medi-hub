@@ -9,8 +9,33 @@
 </head>
 
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+  <div id="root">
+    <button id="login-button">Login</button>
+    <ul id="user-menu" style="display: none;">
+      <li>My Profile</li>
+      <li>Wishlist</li>
+      <li>Logout</li>
+    </ul>
+  </div>
+
+  <script>
+    const isLoggedIn = false; // Change this based on user login status
+    const loginButton = document.getElementById('login-button');
+    const userMenu = document.getElementById('user-menu');
+
+    loginButton.addEventListener('mouseenter', () => {
+      if (isLoggedIn) {
+        userMenu.style.display = 'block';
+      } else {
+        // Only show the login button options for non-logged-in users
+        userMenu.style.display = 'none';
+      }
+    });
+
+    loginButton.addEventListener('mouseleave', () => {
+      userMenu.style.display = 'none';
+    });
+  </script>
 </body>
 
 </html>
