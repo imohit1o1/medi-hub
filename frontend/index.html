@@ -3,13 +3,83 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Scroll to Top</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 2000px; /* For demonstration, extend the height of the page */
+      padding: 20px;
+    }
+
+    .navbar {
+      background-color: #3498db;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .scroll-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      display: none; /* Hidden by default */
+      transition: background-color 0.3s;
+    }
+
+    .scroll-to-top:hover {
+      background-color: #2980b9; /* Darker blue on hover */
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>MediHub</div>
+  </div>
+
+  <!-- Content -->
+  <h1>Welcome to MediHub</h1>
+  <p>Scroll down to see the "Scroll to Top" button.</p>
+  <!-- Additional content to create scrolling effect -->
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+  
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" id="scrollToTopBtn">Scroll to Top</button>
+
+  <script>
+    // Get the button
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+    // Show or hide the button based on scroll position
+    window.onscroll = function () {
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block"; // Show button
+      } else {
+        scrollToTopBtn.style.display = "none"; // Hide button
+      }
+    };
+
+    // Scroll to the top smoothly when the button is clicked
+    scrollToTopBtn.onclick = function () {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Smooth scrolling
+      });
+    };
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
