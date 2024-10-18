@@ -3,13 +3,75 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Order Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #3498db;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .order-container {
+      padding: 20px;
+    }
+
+    .send-button {
+      background-color: #28a745; /* Green color for send button */
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .send-button:hover {
+      background-color: #218838; /* Darker green on hover */
+    }
+
+    .order-details {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>MediHub</div>
+  </div>
+
+  <!-- Order Page -->
+  <div class="order-container">
+    <h1>Order Page</h1>
+    <div class="order-details">
+      <p><strong>Order ID:</strong> #12345</p>
+      <p><strong>Item:</strong> MediCare Package</p>
+      <p><strong>Quantity:</strong> 1</p>
+      <p><strong>Total Price:</strong> $50.00</p>
+    </div>
+
+    <button class="send-button" id="sendOrder">Send Order</button>
+  </div>
+
+  <script>
+    document.getElementById('sendOrder').addEventListener('click', function () {
+      // Placeholder for order submission logic
+      alert('Order has been sent successfully!');
+      // You can replace the alert with actual logic to send the order to the server
+    });
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
