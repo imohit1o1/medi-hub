@@ -6,9 +6,52 @@
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
+  <style>
+    /* Navbar styling */
+    .navbar {
+      background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent blue background */
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Add padding to body to account for fixed navbar */
+    body {
+      padding-top: 60px; /* Adjust based on the navbar height */
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <a href="/">MediHub</a>
+    </div>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/contact">Contact</a>
+      <a href="/login">Login</a>
+    </div>
+  </div>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
