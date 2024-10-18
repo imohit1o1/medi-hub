@@ -3,13 +3,58 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Animated Cursor</title>
+  <style>
+    /* Custom cursor styling */
+    body {
+      cursor: none; /* Hide the default cursor */
+    }
+
+    /* Cursor element */
+    .custom-cursor {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #3498db;
+      pointer-events: none;
+      animation: cursor-animation 1s infinite;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease;
+    }
+
+    /* Cursor animation */
+    @keyframes cursor-animation {
+      0%, 100% {
+        box-shadow: 0 0 5px 2px rgba(52, 152, 219, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 10px 5px rgba(52, 152, 219, 0.5);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Custom cursor element -->
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <div id="root">
+    <h1>Welcome to MediHub</h1>
+    <p>Providing trusted healthcare solutions for you and your family.</p>
+  </div>
+
+  <script>
+    const cursor = document.getElementById('customCursor');
+
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.pageX}px`;
+      cursor.style.top = `${e.pageY}px`;
+    });
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
