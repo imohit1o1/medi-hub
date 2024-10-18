@@ -3,13 +3,79 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Product Details</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #3498db;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product-container {
+      padding: 20px;
+    }
+
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 15px;
+      margin: 10px 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-title {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .product-description {
+      margin: 10px 0;
+    }
+
+    .product-price {
+      font-size: 18px;
+      color: green;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div>MediHub</div>
+  </div>
+
+  <!-- Product Page -->
+  <div class="product-container">
+    <h1>Our Products</h1>
+    
+    <!-- Product Card 1 -->
+    <div class="product-card">
+      <h2 class="product-title">MediCare Package</h2>
+      <p class="product-description">A comprehensive healthcare package offering various medical services.</p>
+      <p class="product-price">$50.00</p>
+    </div>
+
+    <!-- Product Card 2 -->
+    <div class="product-card">
+      <h2 class="product-title">Wellness Checkup</h2>
+      <p class="product-description">Annual health checkup to monitor your overall health.</p>
+      <p class="product-price">$30.00</p>
+    </div>
+
+    <!-- Add more product cards as needed -->
+  </div>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
