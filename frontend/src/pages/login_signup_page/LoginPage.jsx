@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -9,11 +9,19 @@ import animationData from "../../lottie-animation/loginAnimation.json"; // Repla
 
 function LoginPage() {
   const navigate = useNavigate();
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if the token exists in localStorage
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -36,6 +44,7 @@ function LoginPage() {
       );
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
+        setIsAuthenticated(true); // Update authentication status
         toast.success("Login successful");
         navigate("/dashboard");
       } else {
@@ -45,6 +54,13 @@ function LoginPage() {
       console.error("Error logging in:", error);
       toast.error("Login failed");
     }
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsAuthenticated(false);
+    toast.info("Logged out successfully");
+    navigate("/");
   };
 
   const defaultOptions = {
@@ -67,10 +83,10 @@ function LoginPage() {
       <div className="w-1/2 flex justify-center items-center">
         <Lottie options={defaultOptions} height={400} width={400} />
       </div>
-      <div className="w-1/2 flex flex-col justify-center items-center bg-white  shadow-lg p-8">
+      <div className="w-1/2 flex flex-col justify-center items-center bg-white shadow-lg p-8">
         <div className="w-full max-w-md">
           <h1 className="text-3xl font-bold text-center mb-6">Welcome back</h1>
-          <h2 className="text-2xl text-center mb-6">Login your account</h2>
+          <h2 className="text-2xl text-center mb-6">Login to your account</h2>
           <form
             className="flex flex-col"
             id="login-form"
@@ -127,6 +143,22 @@ function LoginPage() {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Conditional rendering for logged-in user's menu */}
+      <div className="absolute top-0 right-0 p-4">
+        {isAuthenticated ? (
+          <div className="dropdown">
+            <button className="dropdown-button">My Account</button>
+            <div className="dropdown-content">
+              <Link to="/profile">My Profile</Link>
+              <Link to="/wishlist">Wishlist</Link>
+              <button onClick={handleLogout}>Logout</button>
+            </div>
+          </div>
+        ) : (
+          <Link to="/login" className="login-button">Login</Link>
+        )}
       </div>
     </div>
   );
