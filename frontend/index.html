@@ -6,10 +6,50 @@
   <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MediHub</title>
+  <style>
+    /* Style for navbar */
+    .navbar {
+      background-color: #3498db; /* Set this to match your website color scheme */
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Add some spacing to prevent content from being hidden behind navbar */
+    body {
+      margin-top: 60px;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+  <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div id="root">
+    <!-- Website content goes here -->
+  </div>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
