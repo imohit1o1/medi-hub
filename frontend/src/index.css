@@ -1,21 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-
 * {
-    /* font-family: "Montserrat", sans-serif; */
-    font-family: "poppins";
+    font-family: "Poppins", sans-serif;
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
     height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+    background-color: #1a202c;
+    color: #ffffff;
 }
 
 /* Style the scrollbar */
@@ -35,3 +37,51 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #03686b;
 }
+
+/* Dark Mode Button Styling */
+#toggleDarkMode {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #03686b;
+    color: #ffffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark #toggleDarkMode {
+    background-color: #b3dad9;
+    color: #03565A;
+}
+
+#toggleDarkMode:hover {
+    background-color: #03565A;
+}
+
+.dark #toggleDarkMode:hover {
+    background-color: #B3DAD9;
+}
+<script>
+    const toggleDarkMode = document.getElementById('toggleDarkMode');
+    const htmlElement = document.documentElement;
+
+    // Check local storage for theme preference
+    if (localStorage.getItem('theme') === 'dark') {
+        htmlElement.classList.add('dark');
+    } else if (localStorage.getItem('theme') === 'light') {
+        htmlElement.classList.remove('dark');
+    }
+
+    toggleDarkMode.addEventListener('click', () => {
+        htmlElement.classList.toggle('dark');
+
+        // Save the current theme preference to local storage
+        if (htmlElement.classList.contains('dark')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+</script>
