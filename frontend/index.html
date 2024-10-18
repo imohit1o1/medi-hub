@@ -3,13 +3,58 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
+  <title>MediHub - Cart Fix</title>
+  <style>
+    .cart-icon {
+      position: relative;
+      font-size: 24px;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      font-size: 14px;
+      border-radius: 50%;
+      padding: 2px 6px;
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="root"></div>
+
+  <div class="cart-icon">
+    🛒 <span id="cartCount" class="cart-count">0</span>
+  </div>
+
+  <div id="root">
+    <h1>Welcome to MediHub</h1>
+    <p>Your trusted healthcare provider.</p>
+  </div>
+
+  <script>
+    let cartItems = [];
+
+    function updateCartCount() {
+      const cartCountElement = document.getElementById('cartCount');
+      const itemCount = cartItems.length;
+
+      if (itemCount > 0) {
+        cartCountElement.textContent = itemCount;
+        cartCountElement.style.display = 'inline-block';
+      } else {
+        cartCountElement.style.display = 'none';
+      }
+    }
+
+    cartItems = [];
+    updateCartCount();
+  </script>
+
   <script type="module" src="/src/main.jsx"></script>
 </body>
 
