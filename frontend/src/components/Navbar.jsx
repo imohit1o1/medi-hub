@@ -60,7 +60,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="w-full h-[8vh] sticky top-0 z-50">
+    <div className="w-full h-[8vh] sticky top-0 z-50 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-3 md:px-4 h-full">
         {/* logo */}
         <NavLink to="/">
