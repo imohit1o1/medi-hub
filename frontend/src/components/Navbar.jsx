@@ -22,6 +22,7 @@ function Navbar() {
   const [show, setShow] = useState(false);
   const handleLogIn = async () => {
     console.log("working");
+    setShow(true);
     
   };
   const handleLogOut = async () => {
@@ -123,7 +124,7 @@ function Navbar() {
               </NavLink>
 
               {/* Dropdown Menus */}
-              {isDropdownOpen && (
+              {isDropdownOpen &&  show &&(
                 <div
                   className="absolute left-0 mt-0 w-56 bg-light_theme border border-dark_theme rounded shadow-lg z-50"
                   onMouseEnter={handleMouseEnter}
@@ -170,7 +171,7 @@ function Navbar() {
           >
             <IoCartOutline className="text-dark_theme size-8 hidden md:block mr-1" />
             <div className="absolute bottom-4 left-4 border border-main_theme rounded-full cursor-pointer z-50 bg-main_theme/90 text-light_theme">
-              <span className="px-2 py-2 text-xs font-medium">7</span>
+              <span className="px-2 py-2 text-xs font-medium">0</span>
             </div>
           </div>
 
