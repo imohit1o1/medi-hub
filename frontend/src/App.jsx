@@ -34,7 +34,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/alldoctors" element={<AllDoctorsPage />} />
-          {/* <Route path="/appointment" element={<Appointment />} /> */}
+          {<Route path="/appointment" element={<Appointment />} /> }
 
           <Route path="/specialities" element={<SpecialitiesPage />} />
 
@@ -52,14 +52,13 @@ function App() {
 
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/termsandconditions" element={<TermsAndConditionsPage />} />
 
           <Route path="/*" element={<ErrorPage />} />
           <Route path="/faqs" element={<FaqsPage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/privacypolicy" element={<PrivacyPolicyPage />} />
-          <Route
-            path="/termsandconditions"
-            element={<TermsAndConditionsPage />}
+          <Route path="/termsandconditions" element={<TermsAndConditionsPage />}
           />
         </Routes>
         <Bot />

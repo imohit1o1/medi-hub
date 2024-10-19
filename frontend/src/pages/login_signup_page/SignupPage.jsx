@@ -20,6 +20,7 @@ function SignupPage() {
     password: "",
     cpassword: "",
   });
+  const[showDropdown, setShowDrowdown] = useState(true);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -29,6 +30,7 @@ function SignupPage() {
     }));
   };
 
+  
   const handleSignup = async (e) => {
     e.preventDefault();
     const { password, cpassword, ...data } = formData;
