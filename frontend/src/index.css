@@ -34,4 +34,18 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #03686b;
+} .login-btn {
+  background-color: #03565A; /* Use a color from your scrollbar */
+  color: #fff; /* White text */
+  padding: 1rem 2rem; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate clickable behavior */
+  font-family: inherit; /* Inherit font from body */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.login-btn:hover {
+  background-color: #03686b; /* Darken background on hover */
 }
