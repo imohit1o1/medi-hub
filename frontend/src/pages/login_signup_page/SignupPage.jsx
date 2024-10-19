@@ -20,6 +20,7 @@ function SignupPage() {
     password: "",
     cpassword: "",
   });
+  const [showDropdown, setShowDropdown] = useState(true);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
