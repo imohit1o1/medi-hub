@@ -1,16 +1,104 @@
-<!doctype html>
-<html lang="en">
+import React, { useState } from 'react';
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MediHub</title>
-</head>
+const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    title: '',
+    description: '',
+    steps: '',
+    expected: '',
+    actual: '',
+    email: ''
+  });
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
 
-</html>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Logic to handle form submission
+    console.log('Bug Report Submitted:', formData);
+    // You can add API calls or form submission logic here
+  };
+
+  return (
+    <div className="container">
+      <h1>Report a Bug</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="title">Bug Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          required
+          placeholder="Enter a brief title for the bug"
+        />
+
+        <label htmlFor="description">Description:</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="6"
+          value={formData.description}
+          onChange={handleChange}
+          required
+          placeholder="Describe the bug in detail"
+        ></textarea>
+
+        <label htmlFor="steps">Steps to Reproduce:</label>
+        <textarea
+          id="steps"
+          name="steps"
+          rows="6"
+          value={formData.steps}
+          onChange={handleChange}
+          required
+          placeholder="List the steps to reproduce the bug"
+        ></textarea>
+
+        <label htmlFor="expected">Expected Result:</label>
+        <textarea
+          id="expected"
+          name="expected"
+          rows="3"
+          value={formData.expected}
+          onChange={handleChange}
+          required
+          placeholder="What did you expect to happen?"
+        ></textarea>
+
+        <label htmlFor="actual">Actual Result:</label>
+        <textarea
+          id="actual"
+          name="actual"
+          rows="3"
+          value={formData.actual}
+          onChange={handleChange}
+          required
+          placeholder="What actually happened?"
+        ></textarea>
+
+        <label htmlFor="email">Your Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          placeholder="Your email for follow-up"
+        />
+
+        <button type="submit">Submit Bug Report</button>
+      </form>
+    </div>
+  );
+};
+
+export default ContactPage;
