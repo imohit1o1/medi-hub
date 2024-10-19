@@ -58,9 +58,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/privacypolicy" element={<PrivacyPolicyPage />} />
           <Route
-            path="/termsandconditions"
-            element={<TermsAndConditionsPage />}
-          />
+            path="/termsandconditions" component={TermsAndConditions} />
         </Routes>
         <Bot />
         {/* <GoToTop /> */}

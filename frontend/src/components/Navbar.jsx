@@ -88,7 +88,7 @@ function Navbar() {
   ];
 
   return (
-    <div className="w-full h-[8vh] sticky top-0 z-50">
+    <div className="w-full h-[8vh] sticky top-0 z-50 bg-[#333]">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-3 md:px-4 h-full">
         {/* logo */}
         <NavLink to="/">
@@ -107,11 +107,13 @@ function Navbar() {
                 </NavLink>
               </li>
             ))}
-            <li
-              className="relative hover:scale-105"
+            <li>
+            <NavLink to="/terms-and-conditions" className={navLinkClass}
+            TermsAndConditions
+              
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-            >
+            />
               <NavLink
                 to="/login"
                 className="text-md font-semibold relative cursor-pointer rounded flex items-center border border-dark_theme text-dark_theme px-4 py-2 gap-2 max-w-[150px]"
